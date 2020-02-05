@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Movies Information</h1>
+    {% if movies_list %}
+      <table>
+        <thead>
+          <th>Released Date</th>
+          <th>Movie Name</th>
+          <th>Hero</th>
+          <th>Heroine</th>
+          <th>Rating</th>
+        </thead>
+        {% for movie in movies_list %}
+        <tr>
+          <td>{{movie.release_date}}</td>
+          <td>{{movie.MovieName}}</td>
+          <td>{{movie.Hero}}</td>
+          <td>{{movie.Heroine}}</td>
+          <td>{{movie.Rating}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No movies found</p>
+    {% endif %}
+  </body>
+</html>
